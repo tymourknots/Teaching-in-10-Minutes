@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .correct { background-color: #c8e6c9; } /* Green for correct answers */
+        .incorrect { background-color: #ffcdd2; } /* Red for incorrect answers */
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5">
+        <h1 class="text-center">Quiz Results</h1>
+        <p class="text-center">Your final score: {{ score }} (33% per correct answer)</p>
+    
+        {% if user_answers %}
+            {% for part, answer in correct_answers.items() %}
+                <div class="mt-3">
+                    <h4>{{ part.capitalize() }}:</h4>
+                    <p>Your Answer: 
+                        {% if part == 'part2' %}
+                            {% for key, val in user_answers[part].items() %}
+                                <span class="{{ results[part][key] }}">{{ val or 'No answer submitted' }}</span>
+                            {% endfor %}
+                        {% else %}
+                            <span class="{{ results[part] }}">{{ user_answers[part] or 'No answer submitted' }}</span>
+                        {% endif %}
+                    </p>
+                    <p>Correct Answer: 
+                        {% if part == 'part2' %}
+                            {% for key, val in answer.items() %}
+                                <span>{{ val }}</span>
+                            {% endfor %}
+                        {% else %}
+                            <span>{{ answer }}</span>
+                        {% endif %}
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">No answers were submitted.</p>
+        {% endif %}
+    
+        <p class="text-center">
+            {% if passed %}
+                Congratulations, you passed!
+            {% else %}
+                Unfortunately, you did not pass. Better luck next time!
+            {% endif %}
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

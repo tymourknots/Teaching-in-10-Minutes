@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn List Comprehensions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', (event) => { hljs.highlightAll(); });</script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <!-- Container for content -->
+    <div class="container mt-5 text-center">
+        <h1>What are list comprehensions in Python?</h1>
+        <p class="mt-4">A list comprehension is a concise way to create lists in Python. It offers a shorter syntax when you want to create a new list based on the values of an existing list or any iterable. Instead of using loops and appending to a list, you can achieve the same using a single line of code with list comprehension.</p>
+        
+        <div class="code-example mt-4">
+            <p>Basic syntax of a list comprehension:</p>
+            <pre><code class="language-python">[new_element for item in iterable if condition]</code></pre>
+
+            <p>Example without:</p>
+            <pre><code class="language-python">squares = []
+                for x in range(1, 11):
+                    if x % 2 == 0:
+                        squares.append(x**2)
+                        print(squares)</code></pre>
+
+            <p>Example with:</p>
+            <pre><code class="language-python">squares = [x**2 for x in range(1, 11) if x % 2 == 0]</code></pre>
+        </div>
+
+        <div class="video-placeholder mt-4">*Short intro video will go here</div>
+        <a href="/video-examples" class="btn btn-primary btn-lg mt-4">Video Examples</a>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

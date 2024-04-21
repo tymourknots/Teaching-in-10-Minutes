@@ -1,0 +1,123 @@
+.navbar-custom {
+    margin-bottom: 30px;
+}
+
+.title-custom {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.description-custom {
+    margin-bottom: 30px;
+}
+
+.button-custom {
+    margin-top: 20px;
+}
+
+.code-example pre {
+    background-color: #1e1e1e; /* Dark background for the code block */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Placeholder for video */
+.video-placeholder {
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.video-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-large {
+    padding: 10px 20px;
+    font-size: 1.5rem; /* larger font size for the button */
+}
+.video-placeholder, .question-box, .answer-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.video-placeholder {
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-option {
+    width: 100%;
+    margin-bottom: 10px; /* Spacing between options */
+}
+
+.answer-box {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745; /* Bootstrap success green */
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Bootstrap danger red */
+    color: white;
+}
+
+/* Style for the practice answer textarea */
+textarea.form-control {
+    background-color: #000;
+    color: #fff;
+}
+    
+.coding-box {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 50px; /* Give it some height even if empty */
+    }
+    
+.coding-box code {
+    white-space: pre; /* Keeps the formatting */
+}
+    
+.input-area {
+    background-color: #2b2b2b; /* Dark background for the code area */
+    color: #f8f8f2; /* Light color for the text */
+    font-family: 'Fira Code', 'Consolas', monospace; /* Monospaced font */
+    border: 1px solid #464646; /* Border around the code area */
+    padding: 10px; /* Padding inside the code area */
+    white-space: pre-wrap; /* Maintains whitespace formatting */
+    overflow-x: auto; /* Adds horizontal scrollbar if needed */
+}
+    
+.draggable, .droppable {
+    margin-bottom: 10px; /* Space between items */
+}
+    
+
+.draggable.ui-draggable-dragging {
+    border-color: #666; 
+}
+
+.highlight {
+    border: 2px dashed #666; /* Style for when a draggable is actively being dragged over a droppable */
+}
+    
+    
+.highlight-hover {
+    background-color: blueviolet; /* Style for when a draggable is hovering over a droppable */
+}
+    
+        

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ Part 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        /* Additional CSS for drag and drop */
+        .draggable-container, .droppable-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .draggable, .droppable {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        /* Add some spacing and styling */
+        .draggable {
+            margin-right: 10px;
+        }
+        .droppable {
+            min-height: 50px;
+            width: calc(50% - 5px);
+            transition: background-color 0.3s;
+        }
+        .droppable-hover {
+            background-color: #e9ecef;
+        }
+        .droppable { position: relative; }
+        .droppable input[type="hidden"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        </style>
+</head>
+<body>
+    <!-- Include the navbar -->
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5">
+        <h1 class="text-center">QUIZ Part 2:</h1>
+        <p class="text-center">Drag and drop the code to its list comprehension counterpart.</p>
+    
+        <!-- Start of the form -->
+        <form action="{{ url_for('quiz_part2') }}" method="POST">
+            <div class="row">
+                <!-- Left column for draggable items -->
+                <div class="col-md-6">
+                    <div id="draggable-string" class="draggable">string = "Hello World!"
+                                                                    uppercase_letters = []
+                                                                    for char in string:
+                                                                        if char.isupper():
+                                                                            uppercase_letters.append(char)
+                    </div>
+                    <div id="draggable-array" class="draggable">array = [-5, 3, -1, 101, -50, 20, -33]
+                                                                    numbers = []
+                                                                    for num in array:
+                                                                        if num > 0:
+                                                                            numbers.append(num)
+                    </div>
+                    <div id="draggable-even" class="draggable">array = []
+                                                                for x in range(10):
+                                                                    if x % 2 == 0:
+                                                                        even_squares.append(x**2)
+                    </div>
+                </div>
+        
+                <!-- Right column for droppable areas -->
+                <div class="col-md-6">
+                    <div id="droppable-numbers" class="droppable">
+                        numbers = [num for num in numbers if num > 0]
+                        <input type="hidden" name="answer1" id="answer1" >
+                    </div>
+                    <div id="droppable-even-squares" class="droppable">
+                        array = [x**2 for x in range(10) if x % 2 == 0]
+                        <input type="hidden" name="answer2" id="answer2" >
+                    </div>
+                    <div id="droppable-uppercase" class="droppable">
+                        uppercase_letters = [char for char in input_string if char.isupper()]
+                        <input type="hidden" name="answer3" id="answer3" >
+                    </div>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Next Part</button>
+            </div>
+        </form>
+    </div>
+    
+    
+
+    <!-- Include jQuery and jQuery UI for drag and drop functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+    $(function() {
+        var droppableValues = {};  // Object to store the relationships
+    
+        $('.draggable').draggable({
+            revert: "invalid", 
+            cursor: "move",
+            start: function(event, ui) {
+                $(this).css('opacity', 0.5);
+            },
+            stop: function(event, ui) {
+                $(this).css('opacity', 1);
+            }
+        });
+    
+        $('.droppable').droppable({
+            accept: ".draggable",
+            drop: function(event, ui) {
+                var draggableId = ui.draggable.attr('id');
+                var droppableId = $(this).attr('id');
+                droppableValues[droppableId] = draggableId;  // Store the draggable ID in the object
+                $(this).text(ui.draggable.text());  // Update the display text
+            }
+        });
+    
+        $('form').on('submit', function(e) {
+            e.preventDefault();  // Prevent the default form submission
+            console.log("Final submission data:", JSON.stringify(droppableValues));
+            $.ajax({
+                type: 'POST',
+                url: '{{ url_for("quiz_part2") }}',
+                contentType: 'application/json',
+                data: JSON.stringify(droppableValues),
+                success: function(response) {
+                    console.log("Success:", response);
+                    window.location.href = "{{ url_for('quiz_part3') }}";  // Redirect to the next page
+                },
+                error: function(error) {
+                    console.log("Error:", error);
+                }
+            });
+        });
+    });
+    </script>
+    
+        
+</body>
+</html>

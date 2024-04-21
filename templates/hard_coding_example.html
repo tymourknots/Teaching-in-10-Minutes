@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Coding Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Include navbar -->
+    {% include 'navbar.html' %}
+    
+    <div class="container mt-5 text-center">
+        <h1>Hard Coding Example:</h1>
+
+        <!-- Example code box -->
+        <div class="coding-box my-4">
+            <!-- Display the task and example solution -->
+            <p>Task: Convert the list comprehension that filters out all odd numbers from a list and squares them into a for-loop with conditionals.</p>
+            <p><code>list_comprehension = [x**2 for x in range(10) if x % 2 == 0]</code></p>
+            <p>Answer:</p>
+            <p><code>squared_evens = []</code></p>
+            <p><code>for number in range(10):</code></p>
+            <p><code>&nbsp;&nbsp;&nbsp;if number % 2 == 0:</code></p>
+            <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squared_evens.append(number**2)</code></p>
+        </div>
+
+<!-- User input box -->
+<div class="coding-box my-4" id="user-input-box">
+    <p>Task: Rewrite the above list comprehension as a for-loop with conditionals.</p>
+    <p>Here's a structure to start with, fill in the blanks:</p>
+    <div class="coding-box input-area" contenteditable="true" id="user-code">
+        <div><code>lowercase_letters = []</code></div>
+        <div><code>for ___ in "HELLO WORLD":</code></div>
+        <div><code>&nbsp;&nbsp;&nbsp;&nbsp;if ___:</code></div>
+        <div><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lowercase_letters.append(___)</code></div>
+    </div>
+    <button class="btn btn-primary mt-3" onclick="checkAnswer()">Submit Answer</button>
+    <p id="output"></p> <!-- This is where feedback will be displayed -->
+</div>
+
+
+
+        <!-- Navigation buttons -->
+        <div class="navigation-buttons my-4">
+            <a href="/coding-examples" class="btn btn-primary">Go Back</a>
+            <a href="/take-quiz" class="btn btn-primary">TAKE QUIZ</a>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var userCode = document.getElementById('user-code').innerText;
+            
+            var correctAnswer = `lowercase_letters = []
+    for char in "HELLO WORLD":
+        if char.isupper():
+            lowercase_letters.append(char.lower())
+    `;
+    
+            userCode = userCode.replace(/\s+/g, ' ').trim(); // Normalize white space for comparison
+            correctAnswer = correctAnswer.replace(/\s+/g, ' ').trim(); // Same for the correct answer
+    
+            if(userCode === correctAnswer) {
+                document.getElementById('output').innerText = 'Correct!';
+                document.getElementById('output').style.color = 'green';
+            } else {
+                document.getElementById('output').innerText = 'Incorrect. Please try again.';
+                document.getElementById('output').style.color = 'red';
+            }
+        }
+    </script>
+    
+    
+
+</body>
+</html>

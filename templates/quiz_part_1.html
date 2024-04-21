@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ Part 1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Include the navbar -->
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5 text-center">
+        <h1>QUIZ Part 1:</h1>
+        
+        <!-- Placeholder for video -->
+        <div class="video-placeholder my-4">
+            <p>*Video will go here</p>
+        </div>
+
+        <form action="{{ url_for('quiz_part1') }}" method="POST">
+            <div class="question-box my-4">
+                <!-- ... question content ... -->
+                <!-- Radio buttons for options instead of regular buttons -->
+                <div class="options">
+                    <input type="radio" name="question1" value="A" id="optionA">
+                    <label for="optionA">A) [1, 4, 9, 16, 25]</label><br>
+        
+                    <input type="radio" name="question1" value="B" id="optionB">
+                    <label for="optionB">B) [4, 16, 36, 64, 100]</label><br>
+        
+                    <input type="radio" name="question1" value="C" id="optionC">
+                    <label for="optionC">C) [2, 4, 6, 8, 10]</label><br>
+        
+                    <input type="radio" name="question1" value="D" id="optionD">
+                    <label for="optionD">D) [1, 9, 25, 49, 81]</label>
+                </div>
+            </div>
+        
+            <!-- Practice text box -->
+            <div class="practice-box my-4">
+                <textarea class="form-control" rows="5" placeholder="Type practice/answer here" name="practice_answer"></textarea>
+            </div>
+        
+            <!-- Submit button -->
+            <div class="navigation-buttons my-4">
+                <button type="submit" class="btn btn-primary">Next Part</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap and other scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

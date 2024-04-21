@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Video Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Same navbar as in other pages -->
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5 text-center">
+        <h1>Hard Video Example:</h1>
+
+        <!-- Video placeholder box -->
+        <div class="video-placeholder my-4">
+            <p>*Video will play here</p>
+        </div>
+
+        <!-- Multiple choice question box -->
+        <div class="question-box my-4">
+            <p>Question: Consider a list of names: ['Alice', 'Bob', 'Charlie', 'David']. The video shows how to use a list comprehension to filter and modify elements of a list. If you want to create a new list that includes only the names starting with the letter 'D' and makes them lowercase, which list comprehension would correctly achieve this?</p>
+            <div class="options">
+                <button class="btn btn-option" onclick="selectAnswer('A')">A) [name.lower() for name in ['Alice', 'Bob', 'Charlie', 'David'] if name[0] == 'D']</button>
+                <button class="btn btn-option" onclick="selectAnswer('B')">B) [name for name in ['Alice', 'Bob', 'Charlie', 'David'] if name[0] == 'D'].lower()</button>
+                <button class="btn btn-option" onclick="selectAnswer('C')">C) [name.lower() for name in ['Alice', 'Bob', 'Charlie', 'David']]</button>
+                <button class="btn btn-option" onclick="selectAnswer('D')">D) [name[0] == 'D'.lower() for name in ['Alice', 'Bob', 'Charlie', 'David']]</button>
+            </div>
+        </div>
+
+        <!-- Practice/answer box -->
+        <div class="answer-box my-4">
+            <textarea class="form-control" rows="5" placeholder="Type practice/answer here"></textarea>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="navigation-buttons my-4">
+            <a href="/video-examples" class="btn btn-primary">Go Back</a>
+            <a href="/coding-examples" class="btn btn-primary">Coding Examples</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap and other scripts here -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function selectAnswer(selected) {
+            const correctAnswer = 'A';
+            const options = document.querySelectorAll('.btn-option');
+            options.forEach(btn => {
+                // Remove highlight class from all buttons
+                btn.classList.remove('btn-success', 'btn-danger');
+    
+                // Highlight the correct answer
+                if (btn.textContent.startsWith(correctAnswer)) {
+                    btn.classList.add('btn-success');
+                }
+    
+                // If the selected answer is wrong, highlight it as well
+                if (btn.textContent.startsWith(selected) && selected !== correctAnswer) {
+                    btn.classList.add('btn-danger');
+                }
+            });
+        }
+    </script>
+    

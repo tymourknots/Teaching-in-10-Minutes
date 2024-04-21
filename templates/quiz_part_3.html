@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ Part 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .code-box {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .answer-box textarea {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5">
+        <h1 class="text-center">QUIZ Part 3:</h1>
+        <p class="text-center">Convert the following block of code to its list comprehension form. DO NOT rewrite fruits[] array as part of answer.</p>
+        
+        <div class="code-box">
+            fruits = ["apple", "banana", "cherry", "kiwi", "mango"]<br>
+            short_fruits = []<br>
+            for fruit in fruits:<br>
+            if len(fruit) < 6:<br>
+            short_fruits.append(fruit.upper())
+        </div>
+        
+        <form action="/submit-quiz-part3" method="POST">
+            <div class="answer-box">
+                <textarea name="code_answer" rows="6" placeholder="//Type code here:" 
+                          onfocus="if(this.value=='//Type code here:') {this.value='';}"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

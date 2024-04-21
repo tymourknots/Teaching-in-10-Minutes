@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Examples</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navbar goes here -->
+    {% include 'navbar.html' %}
+    
+
+    <div class="container mt-5 text-center">
+        <h1>Video Examples</h1>
+        
+        <!-- Video example boxes -->
+        <div class="row mt-4">
+            <!-- Easier example box -->
+            <div class="col-md-6 video-box">
+                <p>*Easier example video link</p>
+                <!-- Link to the Easier Video Example page -->
+                <a href="/easier-video-example" class="btn btn-primary">Easier Example</a>
+            </div>
+
+            <!-- Harder example box -->
+            <div class="col-md-6 video-box">
+                <p>*Harder example video link</p>
+                <!-- Link to the Harder Video Example page -->
+                <a href="/harder-video-example" class="btn btn-primary">Harder Example</a>
+            </div>
+        </div>
+        
+        <!-- Link to the Coding Examples page -->
+        <a href="/coding-examples" class="btn btn-large btn-success mt-4">Coding Examples</a>
+    </div>
+
+    <!-- Bootstrap and other scripts here -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

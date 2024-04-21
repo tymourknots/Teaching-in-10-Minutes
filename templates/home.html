@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn List Comprehensions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    
+    <!-- Main container with custom classes for title, description, and start button -->
+    <div class="container text-center">
+        <h1 class="title-custom">Learning Python List Comprehensions</h1>
+        <p class="description-custom">Are you a beginner Python developer looking to write cleaner code? Unfamiliar with list comprehensions? Then start learning today!</p>
+        <a href="/learn/1" class="btn btn-primary btn-lg button-custom">
+            Start Learning
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="Start" style="width: 100px; display: block; margin: auto;">
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
