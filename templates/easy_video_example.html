@@ -11,30 +11,29 @@
     <!-- Navbar goes here -->
     {% include 'navbar.html' %}
     
-
     <div class="container mt-5 text-center">
         <h1>Easy Video Example:</h1>
         
-        <!-- Video placeholder box -->
+        <!-- Video embedded here -->
         <div class="video-placeholder my-4">
-            <p>*Video will play here</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yTeiKqhbeyk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         
-    <!-- Multiple choice question box -->
-    <div class="question-box my-4">
-    <p>Question: In the video, a list comprehension is used to create a new list of squared numbers from an existing list of integers. If the original list is [1, 2, 3, 4, 5], what would be the output of the list comprehension [x**2 for x in [1, 2, 3, 4, 5]]?</p>
-        <div class="options">
-            <button class="btn btn-option" onclick="selectAnswer('A')">A) [1, 4, 9, 16, 25]</button>
-            <button class="btn btn-option" onclick="selectAnswer('B')">B) [2, 4, 6, 8, 10]</button>
-            <button class="btn btn-option" onclick="selectAnswer('C')">C) [1, 2, 3, 4, 5]</button>
-            <button class="btn btn-option" onclick="selectAnswer('D')">D) [0, 1, 2, 3, 4]</button>
+        <!-- Multiple choice question box -->
+        <div class="question-box my-4">
+            <p>Question: In the video, a list comprehension is used to create a new list of squared numbers from an existing list of integers. If the original list is [1, 2, 3, 4, 5], what would be the output of the list comprehension [x**2 for x in [1, 2, 3, 4, 5]]?</p>
+            <div class="options">
+                <button class="btn btn-option" onclick="selectAnswer('A')">A) [1, 4, 9, 16, 25]</button>
+                <button class="btn btn-option" onclick="selectAnswer('B')">B) [2, 4, 6, 8, 10]</button>
+                <button class="btn btn-option" onclick="selectAnswer('C')">C) [1, 2, 3, 4, 5]</button>
+                <button class="btn btn-option" onclick="selectAnswer('D')">D) [0, 1, 2, 3, 4]</button>
+            </div>
         </div>
-    </div>
 
-    <!-- Practice/answer box -->
-    <div class="answer-box my-4">
-        <textarea class="form-control" rows="5" placeholder="Type practice/answer here"></textarea>
-    </div>
+        <!-- Practice/answer box -->
+        <div class="answer-box my-4">
+            <textarea class="form-control" rows="5" placeholder="Type practice/answer here"></textarea>
+        </div>
 
         <!-- Navigation buttons -->
         <div class="navigation-buttons my-4">
@@ -71,3 +70,4 @@
         </script>
 </body>
 </html>
+

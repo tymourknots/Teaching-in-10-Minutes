@@ -48,11 +48,19 @@
 }
 
 .video-placeholder {
-    height: 300px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%; /* Make sure the placeholder takes the full width */
+    max-width: 100%; /* Restricts the width not to exceed its container */
 }
+
+iframe {
+    width: 100%; /* Allow the iframe to take full width of its container */
+    height: 500px; /* Increase the height to accommodate the video size */
+}
+
 
 .btn-option {
     width: 100%;
