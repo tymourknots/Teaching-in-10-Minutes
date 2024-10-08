@@ -3,6 +3,7 @@ TEACHING IN 10 MINUTES: PYTHON LIST COMPREHENSIONS
 I created a web application for my User Interface Design class, primarily focusing on frontend development, to teach users how to master Python list comprehensions in just 10 minutes. The app includes video tutorials with embedded questions, a quick guide on their usage, interactive coding exercises, and a final quiz. The quiz features a video-based question, a drag-and-drop activity to match code snippets, and a coding challenge where users must type in the correct solution. Users receive immediate feedback, with a score of 2/3 or higher considered a passing grade, while anything below requires further study and retrying the quiz.
 
 Lessons Learned
+
 Using Flask for Backend Development:
 
 I gained experience setting up a simple web server with Flask, creating routes, rendering HTML templates, and managing user sessions. This project reinforced my knowledge of how to build a dynamic web application with Python.
@@ -17,6 +18,7 @@ Session and State Management:
 I used Flask sessions to maintain user state and track progress throughout the course. This taught me how to manage application state across multiple routes and ensure that user data is handled properly.
 
 Skills Gained
+
 Frontend Development with HTML/CSS:
 
 I improved my skills in creating structured and visually appealing interfaces, using custom CSS for layout, styling buttons, and integrating video elements.
@@ -28,6 +30,7 @@ Creating Interactive Quizzes and Code Validation:
 I learned to implement quiz logic, validate user inputs, and provide real-time feedback using both frontend and backend code.
 
 Problems Faced
+
 Managing User State Across Different Quiz Sections:
 
 Keeping track of user progress across different pages was challenging. Using sessions helped, but required careful planning to ensure state consistency.
