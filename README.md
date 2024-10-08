@@ -1,4 +1,4 @@
-#TEACHING IN 10 MINUTES: PYTHON LIST COMPREHENSIONS
+__TEACHING IN 10 MINUTES: PYTHON LIST COMPREHENSIONS__
 
 ##Overview
 I created a web application for my User Interface Design class, primarily focusing on frontend development, to teach users how to master Python list comprehensions in just 10 minutes. The app includes video tutorials with embedded questions, a quick guide on their usage, interactive coding exercises, and a final quiz. The quiz features a video-based question, a drag-and-drop activity to match code snippets, and a coding challenge where users must type in the correct solution. Users receive immediate feedback, with a score of 2/3 or higher considered a passing grade, while anything below requires further study and retrying the quiz.
