@@ -1,3 +1,5 @@
+UPDATE PENDING: will implement React into the project in the near future
+
 __TEACHING IN 10 MINUTES: PYTHON LIST COMPREHENSIONS__
 
 **Overview**
