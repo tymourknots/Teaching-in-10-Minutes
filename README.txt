@@ -1,6 +1,6 @@
 UPDATE PENDING: currently re-integrating Javascript into project, will implement React into the project in the near future
 
-TEACHING IN 10 MINUTES: PYTHON LIST COMPREHENSIONS
+# TEACHING IN 10 MINUTES: PYTHON LIST COMPREHENSIONS
 
 Overview
 
