@@ -9,7 +9,7 @@ I created a web application for my User Interface Design class, primarily focusi
 
 ## Lessons Learned
 
-#### 1. Using Flask for Backend Development:
+### 1. Using Flask for Backend Development:
 
 I gained experience setting up a simple web server with Flask, creating routes, rendering HTML templates, and managing user sessions. This project reinforced my knowledge of how to build a dynamic web application with Python.
 
